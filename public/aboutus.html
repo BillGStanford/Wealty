@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>About Us - Our Days International</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .header {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/api/placeholder/1200/400');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .mission-section {
+            background-color: #f9f9f9;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .mission-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .stats-section {
+            padding: 60px 20px;
+            background-color: #fff;
+        }
+
+        .stats-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .stat-box {
+            text-align: center;
+            padding: 20px;
+            margin: 20px;
+            min-width: 200px;
+            background-color: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .stat-box:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #1a73e8;
+            margin-bottom: 10px;
+        }
+
+        .team-section {
+            padding: 60px 20px;
+            background-color: #f9f9f9;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 40px auto 0;
+        }
+
+        .team-member {
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .team-member img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            object-fit: cover;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2rem;
+            color: #333;
+        }
+
+        h3 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .values-section {
+            padding: 60px 20px;
+            background-color: #fff;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .value-card {
+            padding: 30px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            text-align: left;
+        }
+
+        .value-icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .stat-box {
+                width: 100%;
+                margin: 10px 20px;
+            }
+
+            .team-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+
+
+    <section class="mission-section">
+        <div class="mission-content">
+            <h2>Our Mission</h2>
+            <p>We are committed to delivering accurate, timely, and comprehensive news coverage that empowers our readers to make informed decisions. Through rigorous journalism and unwavering dedication to truth, we strive to maintain the highest standards of journalistic integrity.</p>
+        </div>
+    </section>
+
+    <section class="stats-section">
+        <h2>Our Impact</h2>
+        <div class="stats-container">
+            <div class="stat-box">
+                <div class="stat-number" id="readers">0</div>
+                <p>Million Monthly Readers</p>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number" id="countries">0</div>
+                <p>Countries Reached</p>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number" id="journalists">0</div>
+                <p>Award-Winning Journalists</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="values-section">
+        <h2>Our Core Values</h2>
+        <div class="values-grid">
+            <div class="value-card">
+                <div class="value-icon">🎯</div>
+                <h3>Accuracy</h3>
+                <p>We verify every fact and source to ensure the highest level of accuracy in our reporting.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">⚖️</div>
+                <h3>Impartiality</h3>
+                <p>We present multiple perspectives to give our readers a complete understanding of complex issues.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">🔍</div>
+                <h3>Transparency</h3>
+                <p>We maintain open communication about our journalistic processes and funding sources.</p>
+            </div>
+        </div>
+    </section>
+
+
+
+    <script>
+        // Animate statistics when they come into view
+        function animateStats() {
+            const stats = {
+                readers: { end: 1, current: 1 },
+                countries: { end: 120, current: 0 },
+                journalists: { end: 0, current: 0 }
+            };
+
+            for (let stat in stats) {
+                let element = document.getElementById(stat);
+                let current = stats[stat].current;
+                let end = stats[stat].end;
+                
+                let increment = end / 50; // Divide animation into 50 steps
+                
+                let timer = setInterval(() => {
+                    current += increment;
+                    if (current >= end) {
+                        current = end;
+                        clearInterval(timer);
+                    }
+                    element.textContent = Math.round(current);
+                }, 40);
+            }
+        }
+
+        // Intersection Observer to trigger animation when stats are visible
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateStats();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        observer.observe(document.querySelector('.stats-section'));
+    </script>
+</body>
+</html>

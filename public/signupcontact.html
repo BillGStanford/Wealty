@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact Options - Our Days International</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+
+        .contact-container {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 400px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-option {
+            background: #f8f9fa;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .contact-option:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .icon {
+            font-size: 1.5rem;
+            color: #007bff;
+        }
+
+        .details {
+            display: none;
+            margin-top: 0.5rem;
+            padding: 0.5rem;
+            background: #e9ecef;
+            border-radius: 3px;
+        }
+
+        .show {
+            display: block;
+        }
+
+        .contact-info {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 480px) {
+            .contact-container {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="contact-container">
+        <h1>Get in Touch</h1>
+        
+        <div class="contact-option" onclick="toggleDetails('phone')">
+            <div class="icon">📞</div>
+            <div>
+                <h3>Call Us</h3>
+                <div class="details" id="phone-details">
+                    <p class="contact-info">Phone: (555) 123-4567</p>
+                    <p class="contact-info">Available Mon-Fri, 9AM-5PM</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-option" onclick="toggleDetails('email')">
+            <div class="icon">✉️</div>
+            <div>
+                <h3>Email Us</h3>
+                <div class="details" id="email-details">
+                    <p class="contact-info">Email: contact@example.com</p>
+                    <p class="contact-info">We'll respond within 24 hours</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleDetails(type) {
+            const details = document.getElementById(`${type}-details`);
+            details.classList.toggle('show');
+            
+            // Close other details
+            const allDetails = document.querySelectorAll('.details');
+            allDetails.forEach(detail => {
+                if (detail.id !== `${type}-details`) {
+                    detail.classList.remove('show');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
