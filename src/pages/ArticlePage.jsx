@@ -1,5 +1,4 @@
-// src/pages/ArticlePage.jsx
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { articles } from '../data/articles';
 import { format } from 'date-fns';
@@ -11,6 +10,11 @@ import { motion } from 'framer-motion';
 export default function ArticlePage() {
   const { slug } = useParams();
   const article = articles.find(a => a.slug === slug);
+
+  useEffect(() => {
+    // Scroll to the top when the page loads or component is mounted
+    window.scrollTo(0, 0);
+  }, [slug]); // Runs whenever the slug changes, indicating a new article
 
   if (!article) {
     return <div>Article not found</div>;
