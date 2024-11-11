@@ -9,7 +9,7 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-6">
           <Link to="/" className="text-3xl font-serif font-bold text-gray-900">
-            Our Days Press Int.
+            Our Days Media Int.
           </Link>
           <nav className="hidden md:flex space-x-8">
             {genres.map((genre) => (
@@ -18,7 +18,7 @@ export default function Header() {
                 to={`/genre/${genre.toLowerCase()}`}
                 className="text-gray-500 hover:text-gray-900"
               >
-                {genre}
+                
               </Link>
             ))}
           </nav>
