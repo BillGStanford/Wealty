@@ -1,19 +1,41 @@
 // src/pages/HomePage.jsx
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { articles, genres } from '../data/articles';
 import ArticleCard from '../components/ArticleCard';
 import SidebarAds from '../components/SidebarAds';
 import { Helmet } from 'react-helmet-async';
 import { Filter } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import RandomQuestionModal from '../components/RandomQuestionModal';
 
 export default function HomePage() {
   const [selectedGenre, setSelectedGenre] = useState('All');
   const [showFilters, setShowFilters] = useState(false);
-  
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const filteredArticles = selectedGenre === 'All'
     ? articles
     : articles.filter(article => article.genre === selectedGenre);
+
+  // Trigger the modal after a delay (simulate NYT-style pop-up)
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsModalOpen(true);
+    }, 2000); // 2 seconds delay before the modal shows
+
+    return () => clearTimeout(timer); // Clear the timer if component unmounts
+  }, []);
+
+  const handleModalClose = () => {
+    setIsModalOpen(false);
+  };
+
+  const handleModalAccept = () => {
+    setIsModalOpen(false);
+    // Handle the action when the user accepts (e.g., redirect to Terms page)
+    // For now, we just log it
+    console.log("User accepted to read Terms & Services");
+  };
 
   return (
     <>
@@ -79,6 +101,13 @@ export default function HomePage() {
           <SidebarAds />
         </div>
       </div>
+
+      {/* Random Question Modal */}
+      <RandomQuestionModal 
+        isOpen={isModalOpen}
+        onClose={handleModalClose}
+        onAccept={handleModalAccept}
+      />
     </>
   );
 }
