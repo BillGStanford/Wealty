@@ -156,10 +156,41 @@ export const articles = [
 
       <i>Kamala being Sworn in as the first black, southeast asian, women Vice President of the United States of America</i>
     `,
-
-
-      
     },
+
+    {
+      id: '5',
+      title: 'Fighting for Justice - Ethiopian Group Fighting to Bring Back Stolen Artifacts',
+      slug: 'fighting-for-justice-ethiopian-group-fighting-to-bring-back-stolen-artifacts',
+      author: 'Kuma',
+      date: '2024-11-12',
+      genre: 'Culture',
+      thumbnail: '/images/stolenjewls1.jpg',
+      description: 'The Ethiopian Crown Council Fighting to Bring Back Stolen Artifacts to Ethiopia',
+      content: `
+      <i>*Stolen Ethiopia Crown in British Measum</i>
+    <p>The struggle for justice continues as the <strong>Royal Ethiopian Trust</strong>, an organization dedicated to advancing the legacy of His Imperial Highness Prince Ermias Sahle-Selassie, takes a stand to recover Ethiopia’s stolen artifacts. These treasures, which symbolize Ethiopia’s rich imperial history, were unlawfully taken during the colonial era, and their return is now a focal point for the Ethiopian diaspora and nationalists alike.</p>
+    
+    <p>The <strong>Royal Ethiopian Trust</strong> is driven by a mission not only to recover and protect Ethiopia’s stolen heritage but also to ensure the future prosperity and unity of the nation. By focusing on four critical pillars—empowering Ethiopia’s youth, fostering entrepreneurship, preserving its imperial heritage, and supporting the Ethiopian Crown—the organization is taking comprehensive action to restore Ethiopia’s rightful place in the world.</p>
+
+    <h2>Empowering Ethiopia’s Future</h2>
+    <p>At the heart of the Trust's mission is the empowerment of Ethiopia's next generation. Through educational initiatives, mentorship, and scholarships, the Trust seeks to nurture young Ethiopians who can lead the nation into a brighter future. It is believed that the restoration of cultural and historical treasures will foster a deeper connection to the nation’s legacy, inspiring a renewed sense of pride and unity.</p>
+
+    <h2>Fostering Ethiopian Entrepreneurship</h2>
+    <p>In addition to restoring its heritage, the Trust is investing in Ethiopia's economic future. Through fostering entrepreneurship, particularly in the cultural sector, the organization hopes to create jobs, drive innovation, and stimulate sustainable economic growth. By supporting Ethiopian entrepreneurs, the Trust aims to unlock the untapped potential within the country.</p>
+
+    <h2>Preserving Ethiopia’s Imperial Heritage</h2>
+    <p>Perhaps the most significant part of the Trust’s mission is to preserve the artifacts and treasures that tell the story of Ethiopia’s imperial past. Artifacts, crowns, and royal regalia that were taken by foreign powers in the past century must be returned, not just for historical reasons, but to restore a vital link to the culture and identity of the Ethiopian people. The Trust is spearheading efforts to establish a world-class Ethiopian imperial museum that will not only house these priceless artifacts but serve as a center for education and cultural pride.</p>
+
+    <h2>Supporting the Ethiopian Crown</h2>
+    <p>The Ethiopian monarchy is an enduring symbol of national unity and pride. Despite being abolished in 1974, the Crown continues to hold deep significance for the Ethiopian people. The Royal Ethiopian Trust works to support the Ethiopian Crown, ensuring that the legacy of the monarchy remains a positive force for social cohesion and cultural identity. As part of their broader efforts, the Trust is working to strengthen the role of the Crown in Ethiopia's modern era, reaffirming its influence as a unifying symbol of the nation.</p>
+
+    <p>Through these pillars, the <strong>Royal Ethiopian Trust</strong> is not just fighting to bring back stolen artifacts—it is working tirelessly to ensure that Ethiopia’s cultural, historical, and economic future is secure. The restoration of Ethiopia’s imperial treasures is a cause that transcends borders and generations, uniting Ethiopians around the world in a shared vision for justice and cultural preservation.</p>
+      
+    `,
+    },
+
+
     // Add more articles as needed
   ];
   
