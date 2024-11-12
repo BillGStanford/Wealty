@@ -201,7 +201,8 @@ export const articles = [
       genre: 'Culture',
       thumbnail: '/images/hq720.jpg',
       description: 'The Ethiopian Crown Council Fighting to Bring Back Stolen Artifacts to Ethiopia',
-      status: 'New',  // New field added here
+      status: 'New',
+      newsWorth: 'Urgent-News',  // <-- New field added here
       content: `
       <p>Ethiopia's History is complicated yet beautiful. Ruled based on intergrity, honor, and dignity. All of that is lost now.</p>
 <p>The Ethiopian monarchy is one of the oldest continuous monarchies in the world, with a rich history that stretches over three millennia. From its legendary origins with the Queen of Sheba and King Solomon, the monarchy played a central role in shaping Ethiopian identity, politics, and religion. This history, however, has not been without its challenges, and the monarchy saw both triumph and tragedy before its eventual overthrow in the 20th century.</p>
