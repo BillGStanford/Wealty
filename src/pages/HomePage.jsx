@@ -1,3 +1,5 @@
+// src/pages/HomePage.jsx
+
 import React, { useState, useEffect } from 'react';
 import { articles, genres } from '../data/articles';
 import ArticleCard from '../components/ArticleCard';
@@ -23,6 +25,9 @@ export default function HomePage() {
     if (a.status !== 'New' && b.status === 'New') return 1;
     return 0;
   });
+
+  // Find the urgent news article (if any)
+  const urgentNews = articles.find(article => article.newsWorth === 'Urgent-News');
 
   // Trigger the modal after a delay (simulate NYT-style pop-up)
   useEffect(() => {
@@ -50,11 +55,16 @@ export default function HomePage() {
         <title>Our Days - Latest News and Stories</title>
         <meta name="description" content="Stay informed with the latest news from Our Days." />
       </Helmet>
-      
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="flex flex-col lg:flex-row gap-8">
           {/* Main Content */}
           <div className="flex-1">
+            {/* Hero Section for Urgent News */}
+            {urgentNews && (
+              <ArticleCard article={urgentNews} isHero={true} index={0} />
+            )}
+
             {/* Mobile Filter Toggle */}
             <button
               className="lg:hidden flex items-center space-x-2 mb-4 text-gray-600"
@@ -95,11 +105,7 @@ export default function HomePage() {
             {/* Articles Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {sortedArticles.map((article, index) => (
-                <ArticleCard 
-                  key={article.id} 
-                  article={article} 
-                  index={index}
-                />
+                <ArticleCard key={article.id} article={article} index={index} />
               ))}
             </div>
           </div>
