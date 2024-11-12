@@ -1,7 +1,5 @@
-// src/components/Header.jsx
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { genres } from '../data/articles'; // Add this import
 
 export default function Header() {
   return (
@@ -12,15 +10,12 @@ export default function Header() {
             Our Days Media Int.
           </Link>
           <nav className="hidden md:flex space-x-8">
-            {genres.map((genre) => (
-              <Link
-                key={genre}
-                to={`/genre/${genre.toLowerCase()}`}
-                className="text-gray-500 hover:text-gray-900"
-              >
-                
-              </Link>
-            ))}
+            <Link to="/music" className="text-gray-500 hover:text-gray-900">
+              Music Charts
+            </Link>
+            <Link to="/billionaires" className="text-gray-500 hover:text-gray-900">
+              Billionaires List
+            </Link>
           </nav>
         </div>
       </div>
