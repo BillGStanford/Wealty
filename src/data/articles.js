@@ -167,7 +167,7 @@ export const articles = [
       genre: 'Culture',
       thumbnail: '/images/stolenjewls1.jpg',
       description: 'The Ethiopian Crown Council Fighting to Bring Back Stolen Artifacts to Ethiopia',
-      status: 'New',  // New field added here
+      status: 'Old',  // New field added here
       content: `
       <i>*Stolen Ethiopia Crown in British Measum</i>
     <p>The struggle for justice continues as the <strong>Royal Ethiopian Trust</strong>, an organization dedicated to advancing the legacy of His Imperial Highness Prince Ermias Sahle-Selassie, takes a stand to recover Ethiopia’s stolen artifacts. These treasures, which symbolize Ethiopia’s rich imperial history, were unlawfully taken during the colonial era, and their return is now a focal point for the Ethiopian diaspora and nationalists alike.</p>
@@ -202,7 +202,7 @@ export const articles = [
       thumbnail: '/images/hq720.jpg',
       description: 'The Ethiopian Crown Council Fighting to Bring Back Stolen Artifacts to Ethiopia',
       status: 'New',
-      newsWorth: 'Urgent-News',  // <-- New field added here
+      newsWorth: 'Normal',  // <-- New field added here
       content: `
       <p>Ethiopia's History is complicated yet beautiful. Ruled based on intergrity, honor, and dignity. All of that is lost now.</p>
 <p>The Ethiopian monarchy is one of the oldest continuous monarchies in the world, with a rich history that stretches over three millennia. From its legendary origins with the Queen of Sheba and King Solomon, the monarchy played a central role in shaping Ethiopian identity, politics, and religion. This history, however, has not been without its challenges, and the monarchy saw both triumph and tragedy before its eventual overthrow in the 20th century.</p>
@@ -230,6 +230,35 @@ export const articles = [
 <h2>Restoration of the Monarchy</h2>
 
 <p>Though the Ethiopian monarchy was abolished with the Derg’s rise to power, the idea of restoring the monarchy continues to be a topic of debate in Ethiopia. Various royalists and former supporters of the imperial family have expressed interest in restoring the monarchy in some form, particularly as Ethiopia continues to struggle with political instability and ethnic conflict. The question of monarchy restoration is tied to a broader discussion of Ethiopia’s future governance, as the country grapples with federalism, ethnic-based political divisions, and the desire for national unity. While the possibility of a true restoration remains uncertain, the legacy of the Ethiopian monarchy, with its long history of tradition, identity, and leadership, continues to be an important part of the nation's cultural fabric.</p>
+
+    `,
+    },
+
+    {
+      id: '7',
+      title: 'TOP 5 Shows & Movies of 2024!',
+      slug: 'top-5-movies-and-shows-of-2024',
+      author: 'Kuma',
+      date: '2024-11-14',
+      genre: 'Culture',
+      thumbnail: '/images/movies-shows.jpg',
+      description: 'We will be listing the Top 5 Greatest Shows/Movies of 2024',
+      status: 'New',
+      newsWorth: 'Urgent-News',  // <-- New field added here
+      content: `
+      <h2>The Gentlemen (SERIES)</h2>
+      <p>When aristocratic Eddie inherits the family estate, he discovers that it's home to an enormous weed empire, and its proprietors aren't going anywhere.</p>
+      <h2>Scoop (SERIES)</h2>
+<p>In this fast-paced newsroom drama, a seasoned investigative journalist teams up with a young prodigy to uncover a scandal that could rock the political establishment. As they dig deeper into a complex web of corruption, the line between right and wrong blurs, and they must decide what they're willing to sacrifice for the truth.</p>
+<h2>The Last Horizon (SERIES)</h2>
+<p>Set in a dystopian future where Earth is on the brink of collapse, this sci-fi series follows a team of explorers on a daring mission to find a new home for humanity. With breathtaking visuals and complex moral dilemmas, "The Last Horizon" questions what it means to survive—and whether the cost is worth it.</p>
+
+<h2>The Silent Code (SERIES)</h2>
+<p>This espionage thriller takes viewers into the heart of a covert operation, where an elite group of spies must work together to prevent an international crisis. With an emphasis on high-stakes action, cryptic clues, and deep undercover work, the series is full of twists and betrayals that will keep you on the edge of your seat.</p>
+
+<h2>The Shadows of Avalon (SERIES)</h2>
+<p>A blend of Arthurian legend and modern-day fantasy, this series reimagines the mythic kingdom of Avalon as it battles against supernatural forces threatening to break the fragile peace between humans and magical beings. Themes of destiny, power, and betrayal weave through a tale of ancient magic and present-day conflict.</p>
+
 
     `,
     },
