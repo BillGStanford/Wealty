@@ -1,4 +1,3 @@
-// src/pages/HomePage.jsx
 import React, { useState, useEffect } from 'react';
 import { articles, genres } from '../data/articles';
 import ArticleCard from '../components/ArticleCard';
@@ -13,9 +12,17 @@ export default function HomePage() {
   const [showFilters, setShowFilters] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  // Filter articles based on genre and sort them by 'status'
   const filteredArticles = selectedGenre === 'All'
     ? articles
     : articles.filter(article => article.genre === selectedGenre);
+
+  // Sort articles: 'New' articles first, followed by 'Old'
+  const sortedArticles = filteredArticles.sort((a, b) => {
+    if (a.status === 'New' && b.status !== 'New') return -1;
+    if (a.status !== 'New' && b.status === 'New') return 1;
+    return 0;
+  });
 
   // Trigger the modal after a delay (simulate NYT-style pop-up)
   useEffect(() => {
@@ -87,7 +94,7 @@ export default function HomePage() {
 
             {/* Articles Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {filteredArticles.map((article, index) => (
+              {sortedArticles.map((article, index) => (
                 <ArticleCard 
                   key={article.id} 
                   article={article} 
