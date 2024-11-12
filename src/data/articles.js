@@ -167,6 +167,7 @@ export const articles = [
       genre: 'Culture',
       thumbnail: '/images/stolenjewls1.jpg',
       description: 'The Ethiopian Crown Council Fighting to Bring Back Stolen Artifacts to Ethiopia',
+      status: 'New',  // New field added here
       content: `
       <i>*Stolen Ethiopia Crown in British Measum</i>
     <p>The struggle for justice continues as the <strong>Royal Ethiopian Trust</strong>, an organization dedicated to advancing the legacy of His Imperial Highness Prince Ermias Sahle-Selassie, takes a stand to recover Ethiopia’s stolen artifacts. These treasures, which symbolize Ethiopia’s rich imperial history, were unlawfully taken during the colonial era, and their return is now a focal point for the Ethiopian diaspora and nationalists alike.</p>
@@ -191,6 +192,46 @@ export const articles = [
     },
 
 
+    {
+      id: '6',
+      title: 'Preserve African Culture - Including Ethiopia!',
+      slug: 'preserve-african-culture-including-ethiopia',
+      author: 'Kuma',
+      date: '2024-11-12',
+      genre: 'Culture',
+      thumbnail: '/images/hq720.jpg',
+      description: 'The Ethiopian Crown Council Fighting to Bring Back Stolen Artifacts to Ethiopia',
+      status: 'New',  // New field added here
+      content: `
+      <p>Ethiopia's History is complicated yet beautiful. Ruled based on intergrity, honor, and dignity. All of that is lost now.</p>
+<p>The Ethiopian monarchy is one of the oldest continuous monarchies in the world, with a rich history that stretches over three millennia. From its legendary origins with the Queen of Sheba and King Solomon, the monarchy played a central role in shaping Ethiopian identity, politics, and religion. This history, however, has not been without its challenges, and the monarchy saw both triumph and tragedy before its eventual overthrow in the 20th century.</p>
+
+<h2>Monarchy Success in Ethiopia</h2>
+
+<p>For much of Ethiopia’s history, the monarchy was seen as a symbol of national unity, political stability, and pride. The rise of the Solomonic dynasty, which began in the 13th century, marked the golden era of the monarchy. Under Emperor Menelik II, Ethiopia achieved remarkable success, most notably with the defeat of Italy in the Battle of Adwa in 1896. This victory ensured Ethiopia’s independence, making it one of the few African nations to resist European colonization. Menelik’s diplomatic acumen and military strength helped solidify Ethiopia's position as a sovereign state in a rapidly changing world. The monarchy’s power also laid the foundation for a unified Ethiopian identity, connecting the diverse ethnic and religious groups under a single imperial banner.</p>
+
+<h2>It's EVEN GREATER Success</h2>
+
+<p>Under the reign of Emperor Haile Selassie I, the Ethiopian monarchy reached even greater heights. Haile Selassie, one of Africa’s most influential figures, modernized Ethiopia through reforms in education, infrastructure, and governance. His leadership played a pivotal role in securing Ethiopia’s place on the world stage, particularly when he became the first African leader to address the League of Nations in 1936, appealing against Italy’s invasion. He sought to modernize the country, building roads, schools, and a modern military. His vision extended beyond Ethiopia, with Selassie becoming a founding member of the Organization of African Unity (OAU), promoting African unity and independence. He also embraced Western-style governance reforms, all of which made him an international symbol of African dignity and resistance against colonialism.</p>
+
+<h2>It's Fall by the Evil Derg</h2>
+
+<p>The fall of the Ethiopian monarchy came in 1974, when a Marxist military junta known as the Derg, led by Colonel Mengistu Haile Mariam, overthrew Haile Selassie’s government. The coup was driven by widespread dissatisfaction with the monarchy’s perceived inability to address poverty, corruption, and political repression. The Derg promised to address these issues through a radical socialist agenda. However, their reign led to a period of extreme violence and repression. Haile Selassie, the revered monarch, was imprisoned and later died under mysterious circumstances in 1975, while the Derg executed thousands of perceived political enemies during a campaign of terror known as the "Red Terror." The monarchy’s fall marked the end of an era that had spanned over three thousand years, and Ethiopia plunged into a period of political instability and bloodshed.</p>
+
+<h2>Genocides and Massacres by the Derg Against Royals and Civilians</h2>
+
+<p>The Derg’s rule was marked by brutality against both the Ethiopian people and the former royal family. During the “Red Terror,” the Derg targeted anyone they considered a threat to their authority, including intellectuals, former military officers, and civilians. The royal family was not spared; many members of the imperial family were executed or disappeared. The Derg also initiated a series of massacres, including the killing of thousands of ethnic civilians and political opponents. The genocidal policies of the Derg decimated communities and led to widespread suffering across the country. The violence, coupled with economic mismanagement, further isolated Ethiopia from the international community and left a deep scar on the national psyche.</p>
+
+<h2>The Great Haile Selassie</h2>
+
+<p>Emperor Haile Selassie remains one of the most iconic figures in Ethiopian and African history. Revered as the “Lion of Judah” and the “Defender of the Faith,” Selassie was a symbol of Ethiopian pride and resistance, not only within Ethiopia but across the African continent. He was a key figure in the establishment of the Organization of African Unity and worked to secure Ethiopia’s independence on the international stage. His speeches, such as the famous 1936 address to the League of Nations, continue to resonate as symbols of defiance against imperialism. In the Rastafarian movement, he is considered a messianic figure, symbolizing the hope for redemption. Despite his eventual overthrow, his legacy remains a beacon of pride for Ethiopians and a symbol of Africa’s struggle for independence and unity.</p>
+
+<h2>Restoration of the Monarchy</h2>
+
+<p>Though the Ethiopian monarchy was abolished with the Derg’s rise to power, the idea of restoring the monarchy continues to be a topic of debate in Ethiopia. Various royalists and former supporters of the imperial family have expressed interest in restoring the monarchy in some form, particularly as Ethiopia continues to struggle with political instability and ethnic conflict. The question of monarchy restoration is tied to a broader discussion of Ethiopia’s future governance, as the country grapples with federalism, ethnic-based political divisions, and the desire for national unity. While the possibility of a true restoration remains uncertain, the legacy of the Ethiopian monarchy, with its long history of tradition, identity, and leadership, continues to be an important part of the nation's cultural fabric.</p>
+
+    `,
+    },
     // Add more articles as needed
   ];
   
