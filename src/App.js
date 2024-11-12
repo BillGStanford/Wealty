@@ -4,6 +4,8 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
 import ArticlePage from './pages/ArticlePage';
+import MusicPage from './pages/MusicPage';
+import BillionairesList from './pages/BillionairesList';
 
 function App() {
   return (
@@ -15,7 +17,8 @@ function App() {
             <Routes>
               <Route path="/" element={<HomePage />} />
               <Route path="/article/:slug" element={<ArticlePage />} />
-              <Route path="/genre/:genre" element={<HomePage />} />
+              <Route path="/music" element={<MusicPage />} />
+              <Route path="/billionaires" element={<BillionairesList />} />
             </Routes>
           </main>
           <Footer />
