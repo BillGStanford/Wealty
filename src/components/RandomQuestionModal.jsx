@@ -1,30 +1,11 @@
 // src/components/RandomQuestionModal.jsx
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
 export default function RandomQuestionModal({ isOpen, onClose, onAccept }) {
-  const [showModal, setShowModal] = useState(isOpen);
+  const [showModal, setShowModal] = useState(false); // Set the modal to not show by default
   const surveyLink = "https://forms.gle/bM2R9a6d5sqWAoHF6"; // Replace with your Google Forms link
 
-  useEffect(() => {
-    const lastModalTime = localStorage.getItem('lastModalTime');
-    const currentTime = new Date().getTime();
-
-    // Show the modal only if the last time was more than 10 minutes ago
-    if (!lastModalTime || currentTime - lastModalTime >= 600000) {
-      setShowModal(true);
-    }
-
-    // Set an interval to show the modal every 10 minutes
-    const interval = setInterval(() => {
-      setShowModal(true);
-    }, 600000); // 10 minutes in milliseconds
-
-    return () => clearInterval(interval); // Cleanup the interval when the component is unmounted
-  }, []);
-
   const handleAccept = () => {
-    // Update the time in local storage when the user accepts
-    localStorage.setItem('lastModalTime', new Date().getTime());
     onAccept(); // Call the parent onAccept function if needed
     setShowModal(false); // Hide the modal after accepting
   };
@@ -34,6 +15,7 @@ export default function RandomQuestionModal({ isOpen, onClose, onAccept }) {
     setShowModal(false); // Hide the modal if the user closes it
   };
 
+  // If you want to prevent the modal from showing regardless of isOpen or time, return null here
   if (!showModal) return null;
 
   return (
