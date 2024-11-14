@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import SearchFunction from './SearchFunction';
+import { articles } from '../data/articles';  // Changed to named import
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -17,17 +19,21 @@ export default function Header() {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8">
-            <Link to="/music" className="text-gray-500 hover:text-gray-900">
-              Music Charts
-            </Link>
-            <Link to="/billionaires" className="text-gray-500 hover:text-gray-900">
-              Billionaires List
-            </Link>
-          </nav>
+          <div className="hidden md:flex items-center space-x-8">
+            <nav className="flex space-x-8">
+              <Link to="/music" className="text-gray-500 hover:text-gray-900">
+                Music Charts
+              </Link>
+              <Link to="/billionaires" className="text-gray-500 hover:text-gray-900">
+                Billionaires List
+              </Link>
+            </nav>
+            <SearchFunction articles={articles} />
+          </div>
 
-          {/* Mobile Menu Button */}
-          <div className="md:hidden">
+          {/* Mobile Navigation Controls */}
+          <div className="flex items-center space-x-4 md:hidden">
+            <SearchFunction articles={articles} />
             <button
               onClick={toggleMenu}
               className="text-gray-500 hover:text-gray-900 focus:outline-none"
