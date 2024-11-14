@@ -1,7 +1,6 @@
-// src/pages/HomePage.jsx
-
 import React, { useState, useEffect } from 'react';
 import { articles, genres } from '../data/articles';
+import { breakingNewsData } from '../data/breakingnews'; // Import breaking news data
 import ArticleCard from '../components/ArticleCard';
 import SidebarAds from '../components/SidebarAds';
 import { Helmet } from 'react-helmet-async';
@@ -28,6 +27,9 @@ export default function HomePage() {
 
   // Find the urgent news article (if any)
   const urgentNews = articles.find(article => article.newsWorth === 'Urgent-News');
+
+  // Filter the breaking news headlines where breakingnewsinfo is true
+  const breakingNewsHeadlines = breakingNewsData.filter(news => news.breakingnewsinfo);
 
   // Trigger the modal after a delay (simulate NYT-style pop-up)
   useEffect(() => {
@@ -57,6 +59,24 @@ export default function HomePage() {
       </Helmet>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        {/* Breaking News Ticker */}
+        <div className="bg-yellow-500 text-white p-2 rounded-md mb-4">
+          <div className="flex items-center space-x-4">
+            <span className="font-semibold">Breaking News: </span>
+            <div className="flex-1 overflow-hidden whitespace-nowrap">
+              <div className="animate-marquee">
+                {breakingNewsHeadlines.length > 0
+                  ? breakingNewsHeadlines.map((news, index) => (
+                      <span key={index} className="mr-8">
+                        {news.title}
+                      </span>
+                    ))
+                  : 'No breaking news at the moment.'}
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div className="flex flex-col lg:flex-row gap-8">
           {/* Main Content */}
           <div className="flex-1">
