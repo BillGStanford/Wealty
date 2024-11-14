@@ -201,7 +201,7 @@ export const articles = [
       genre: 'Culture',
       thumbnail: '/images/hq720.jpg',
       description: 'The Ethiopian Crown Council Fighting to Bring Back Stolen Artifacts to Ethiopia',
-      status: 'New',
+      status: 'Old',
       newsWorth: 'Normal',  // <-- New field added here
       content: `
       <p>Ethiopia's History is complicated yet beautiful. Ruled based on intergrity, honor, and dignity. All of that is lost now.</p>
@@ -243,8 +243,8 @@ export const articles = [
       genre: 'Culture',
       thumbnail: '/images/movies-shows.jpg',
       description: 'We will be listing the Top 5 Greatest Shows/Movies of 2024',
-      status: 'New',
-      newsWorth: 'Urgent-News',  // <-- New field added here
+      status: 'Old',
+      newsWorth: 'Normal',  // <-- New field added here
       content: `
       <h2>The Gentlemen (SERIES)</h2>
       <p>When aristocratic Eddie inherits the family estate, he discovers that it's home to an enormous weed empire, and its proprietors aren't going anywhere.</p>
@@ -262,6 +262,56 @@ export const articles = [
 
     `,
     },
+
+    {
+      id: '8',
+      title: 'Liz Cheney and Her Crimes & Including The Others!',
+      slug: 'liz-cheney-and-her-crimes-&-including-the-others',
+      author: 'Kuma',
+      date: '2024-11-14',
+      genre: 'Politics',
+      thumbnail: '/images/route-fifty-lead-image.jpg',
+      description: 'We will be listing the Top 5 Greatest Shows/Movies of 2024',
+      status: 'New',
+      newsWorth: 'Urgent-News',  // <-- New field added here
+      content: `
+      <h2>"THE VIEW" Praises Liz Cheney's "Moral Core"</h2>
+
+   <p>Liz Cheney, daughter of a literal war criminal, Dick Cheney, who played a pivotal role in the genocidal Iraq War, is being hailed as a "good person" by mainstream media figures like those on *The View*. This praise for Liz Cheney, despite her unwavering support for her father's catastrophic decisions—decisions that led to the deaths of over a million people—reveals a staggering level of hypocrisy and a complete failure to hold powerful figures accountable for their war crimes.</p>
+
+<h2>The Cheney Legacy of War Crimes</h2>
+
+<p>Dick Cheney, former Vice President of the United States, was one of the chief architects of the Iraq War. This war, based on false intelligence and fabricated claims of weapons of mass destruction, resulted in one of the greatest humanitarian disasters of the 21st century. Tens of thousands of soldiers, countless innocent civilians, and millions of displaced people—this was the legacy of Cheney's decisions. Despite these crimes, Cheney has never been held accountable, and yet, his daughter, Liz Cheney, continues to profit politically from her family's role in this bloodshed. How is it possible that she is called a "good person" when her actions directly support the same policies that led to global devastation?</p>
+
+<h2>The Double Standards of Global Justice</h2>
+
+<p>Meanwhile, Donald Trump, who came into office with a platform that was criticized for its unpredictability and controversial rhetoric, faces relentless scrutiny for matters that, while politically divisive, pale in comparison to the mass atrocities committed during the Iraq War. It is a travesty that figures like Cheney, who actively supported and orchestrated these atrocities, remain untouchable, while Trump—often criticized for his inflammatory rhetoric and political missteps—is vilified to the highest degree. This selective outrage undermines the very concept of justice and exposes the hypocrisy of the political establishment.</p>
+
+<h2>The Global Silence on War Crimes</h2>
+
+<p>The world watched in silence as Cheney, along with figures like George W. Bush and Donald Rumsfeld, drove the United States into a war of aggression that violated international law and led to genocide-level violence. Despite overwhelming evidence that the invasion was based on lies and resulted in war crimes, these individuals have faced little to no legal consequences. The United Nations and international courts have long maintained that such actions qualify as war crimes, yet Cheney and his ilk walk free, while the world continues to ignore the blood on their hands.</p>
+
+<h2>The True Cost of the Iraq War</h2>
+
+<p>The war in Iraq, orchestrated by Cheney and others, not only caused untold suffering but destabilized an entire region. The rise of ISIS, the collapse of Iraq as a unified nation, and the spread of sectarian violence were direct results of this reckless invasion. The so-called "war on terror" has left millions dead or displaced, with entire generations of Iraqis growing up in a post-apocalyptic environment. And yet, Cheney—along with other war criminals—continues to live a life free of consequences. Meanwhile, Trump, often criticized for his policies and handling of international relations, is painted as the ultimate villain, despite his administration having no direct involvement in this kind of mass destruction.</p>
+
+<h2>Why the Global Justice System Fails</h2>
+
+<p>International justice is supposed to be about holding the powerful accountable. But the case of Dick Cheney, Liz Cheney, and the Iraq War highlights a dark truth: when the powerful commit war crimes, they are rarely held accountable. Instead, they are celebrated, protected, and even revered. This broken system allows figures like Cheney, who enabled one of the most disastrous conflicts in modern history, to escape justice. And at the same time, figures like Donald Trump—who, despite his many faults, did not launch illegal wars or cause millions of deaths—are relentlessly persecuted, often based on political motives rather than genuine justice.</p>
+
+<h2>The Hypocrisy of the "Good Person" Narrative</h2>
+
+<p>It is an affront to true morality that Liz Cheney is praised as a "good person" while continuing to support the policies that enabled one of the most violent wars in modern history. Her praise for her father’s actions, which led to the deaths of millions, should not be ignored or overlooked. Instead, the world should look at Cheney's role in the Iraq War, and ask: How is it possible that a person who supports such devastation is considered morally superior to someone like Donald Trump, who is still facing political trials and public condemnation, despite not being responsible for these horrors? The standards are not only inconsistent—they are unjust.</p>
+
+<h2>The Global Failure of Accountability</h2>
+
+<p>Ultimately, the global justice system fails because it refuses to apply the same standards to all. When war criminals like Dick Cheney walk free, and figures like Donald Trump are relentlessly scrutinized for far lesser offenses, it exposes the hypocrisy and the lack of true justice in international politics.</p>
+
+    `,
+    },
+
+
+    
     // Add more articles as needed
   ];
   
