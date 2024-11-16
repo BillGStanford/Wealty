@@ -6,6 +6,7 @@ import HomePage from './pages/HomePage';
 import ArticlePage from './pages/ArticlePage';
 import MusicPage from './pages/MusicPage';
 import BillionairesList from './pages/BillionairesList';
+import { QuizzesPage, QuizPage } from './pages/QuizPage';
 
 function App() {
   return (
@@ -19,6 +20,8 @@ function App() {
               <Route path="/article/:slug" element={<ArticlePage />} />
               <Route path="/music" element={<MusicPage />} />
               <Route path="/billionaires" element={<BillionairesList />} />
+              <Route path="/quizzes" element={<QuizzesPage />} />
+              <Route path="/quiz/:quizId" element={<QuizPage />} />
             </Routes>
           </main>
           <Footer />
