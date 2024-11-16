@@ -36,7 +36,7 @@ export default function Footer() {
               <li><a href="signupcontact.html" target="_blank" className="hover:text-white">Contact</a></li>
               <li>
                 <button
-                  onClick={() => openModal('Privacy Policy', 'Here is the Privacy Policy content...')}
+                  onClick={() => openModal('Privacy Policy', 'we respect your privacy and are committed to protecting your personal information. This policy outlines how we collect, use, and safeguard your data. We collect no data via you browsing our platform and will only ask for information that you are willing to give/share.')}
                   className="text-gray-400 hover:text-white"
                 >
                   Privacy Policy
@@ -44,7 +44,7 @@ export default function Footer() {
               </li>
               <li>
                 <button
-                  onClick={() => openModal('Terms of Service', 'Here are the Terms of Service...')}
+                  onClick={() => openModal('Terms of Service', 'These terms are governed by the laws of United States, and any disputes shall be resolved in the appropriate jurisdiction within United States. Anyone can sample our content but it is 100% owned by us.')}
                   className="text-gray-400 hover:text-white"
                 >
                   Terms of Service
@@ -57,7 +57,7 @@ export default function Footer() {
           <div>
             <h3 className="text-white text-2xl font-bold mb-6">Follow Us</h3>
             <div className="flex space-x-8 text-2xl">
-              <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white">
+            <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white">
                 <FaTwitter />
               </a>
               <a href="https://youtube.com/yourchannel" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white">
