@@ -60,7 +60,7 @@ export default function HomePage() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Breaking News Ticker */}
-        <div className="bg-yellow-500 text-white p-2 rounded-md mb-4">
+        <div className="bg-black text-white p-2 rounded-md mb-4">
           <div className="flex items-center space-x-4">
             <span className="font-semibold">Breaking News: </span>
             <div className="flex-1 overflow-hidden whitespace-nowrap">
