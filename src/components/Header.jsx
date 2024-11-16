@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import SearchFunction from './SearchFunction';
-import { articles } from '../data/articles';  // Changed to named import
+import { articles } from '../data/articles';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -26,6 +26,9 @@ export default function Header() {
               </Link>
               <Link to="/billionaires" className="text-gray-500 hover:text-gray-900">
                 Billionaires List
+              </Link>
+              <Link to="/quizzes" className="text-gray-500 hover:text-gray-900">
+                Quizzes
               </Link>
             </nav>
             <SearchFunction articles={articles} />
@@ -74,6 +77,12 @@ export default function Header() {
               className="text-gray-500 hover:text-blue-500 transition-colors duration-200"
             >
               Billionaires List
+            </Link>
+            <Link
+              to="/quizzes"
+              className="text-gray-500 hover:text-blue-500 transition-colors duration-200"
+            >
+              Quizzes
             </Link>
           </nav>
         </div>
