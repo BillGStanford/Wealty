@@ -1,83 +1,105 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { articles } from '../data/articles';
 import { format } from 'date-fns';
-import { Helmet } from 'react-helmet-async';
-import SidebarAds from '../components/SidebarAds';
-import { Clock, User, Tag, Share2 } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { Clock, User, Tag, Share2, Check } from 'lucide-react';
+import { Alert } from "../components/ui/Alert"; // Adjust this relative path based on your directory structure
+
 
 export default function ArticlePage() {
   const { slug } = useParams();
   const article = articles.find(a => a.slug === slug);
+  const [showCopied, setShowCopied] = useState(false);
 
   useEffect(() => {
-    // Scroll to the top when the page loads or component is mounted
     window.scrollTo(0, 0);
-  }, [slug]); // Runs whenever the slug changes, indicating a new article
+  }, [slug]);
+
+  const handleShare = async () => {
+    try {
+      await navigator.clipboard.writeText(window.location.href);
+      setShowCopied(true);
+      setTimeout(() => setShowCopied(false), 2000);
+    } catch (err) {
+      console.error('Failed to copy:', err);
+    }
+  };
 
   if (!article) {
-    return <div>Article not found</div>;
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <h1 className="text-3xl font-serif text-gray-800">Article not found</h1>
+      </div>
+    );
   }
 
   return (
-    <>
-      <Helmet>
-        <title>{article.title} - Our Days</title>
-        <meta name="description" content={article.description} />
-        <meta property="og:title" content={article.title} />
-        <meta property="og:description" content={article.description} />
-        <meta property="og:image" content={article.thumbnail} />
-      </Helmet>
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="flex flex-col lg:flex-row gap-8">
-          {/* Main Content */}
-          <motion.article 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="flex-1"
-          >
-            <header className="mb-8">
-              <h1 className="text-4xl font-serif font-bold mb-4">{article.title}</h1>
-              
-              <div className="flex flex-wrap items-center gap-4 text-gray-500 mb-6">
-                <div className="flex items-center">
-                  <User className="w-5 h-5 mr-2" />
-                  {article.author}
-                </div>
-                <div className="flex items-center">
-                  <Clock className="w-5 h-5 mr-2" />
-                  {format(new Date(article.date), 'MMMM d, yyyy')}
-                </div>
-                <div className="flex items-center">
-                  <Tag className="w-5 h-5 mr-2" />
-                  {article.genre}
-                </div>
-              </div>
-
-              <div className="relative">
-                <img
-                  src={article.thumbnail}
-                  alt={article.title}
-                  className="w-full h-[400px] object-cover rounded-xl"
-                />
-                <button className="absolute top-4 right-4 bg-white/90 p-2 rounded-full shadow-lg hover:bg-white transition-colors">
-                  <Share2 className="w-5 h-5" />
-                </button>
-              </div>
-            </header>
-
-            <div 
-              className="prose prose-lg max-w-none"
-              dangerouslySetInnerHTML={{ __html: article.content }}
-            />
-          </motion.article>
-
-          {/* Sidebar */}
-          <SidebarAds />
+    <div className="min-h-screen bg-white">
+      {/* Alert for copied link */}
+      {showCopied && (
+        <div className="fixed top-4 right-4 z-50">
+          <Alert className="bg-green-50 border-green-200">
+            <Check className="h-4 w-4 text-green-600" />
+            <span className="text-green-600">Link copied to clipboard</span>
+          </Alert>
         </div>
-      </div>
-    </>
+      )}
+
+      <article className="max-w-4xl mx-auto px-4 py-12">
+        {/* Category Tag */}
+        <div className="mb-8">
+          <span className="uppercase text-xs tracking-widest text-gray-500 font-medium">
+            {article.genre}
+          </span>
+        </div>
+
+        {/* Title */}
+        <h1 className="font-serif text-5xl leading-tight mb-8 text-gray-900">
+          {article.title}
+        </h1>
+
+        {/* Article Meta */}
+        <div className="flex flex-wrap items-center gap-6 text-sm text-gray-500 mb-12 pb-8 border-b border-gray-200">
+          <div className="flex items-center gap-2">
+            <User className="h-4 w-4" />
+            <span className="font-medium">{article.author}</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <Clock className="h-4 w-4" />
+            <time>{format(new Date(article.date), 'MMMM d, yyyy')}</time>
+          </div>
+          <button 
+            onClick={handleShare}
+            className="ml-auto flex items-center gap-2 hover:text-gray-900 transition-colors"
+          >
+            <Share2 className="h-4 w-4" />
+            <span>Share</span>
+          </button>
+        </div>
+
+        {/* Article Content */}
+        <div className="prose prose-lg max-w-none">
+          <div 
+            className="first-letter:text-7xl first-letter:font-serif first-letter:mr-3 first-letter:float-left first-letter:font-bold"
+            dangerouslySetInnerHTML={{ __html: article.content }}
+          />
+        </div>
+
+        {/* Article Footer */}
+        <footer className="mt-16 pt-8 border-t border-gray-200">
+          <div className="flex flex-wrap gap-4">
+            {article.tags?.map((tag) => (
+              <span 
+                key={tag}
+                className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-100 text-sm text-gray-600"
+              >
+                <Tag className="h-3 w-3" />
+                {tag}
+              </span>
+            ))}
+          </div>
+        </footer>
+      </article>
+    </div>
   );
 }
