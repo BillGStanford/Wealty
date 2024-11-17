@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { articles, genres } from '../data/articles';
 import { breakingNewsData } from '../data/breakingnews'; // Import breaking news data
 import ArticleCard from '../components/ArticleCard';
-import SidebarAds from '../components/SidebarAds';
+
 import { Helmet } from 'react-helmet-async';
 import { Filter } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -85,6 +85,8 @@ export default function HomePage() {
               <ArticleCard article={urgentNews} isHero={true} index={0} />
             )}
 
+            
+
             {/* Mobile Filter Toggle */}
             <button
               className="lg:hidden flex items-center space-x-2 mb-4 text-gray-600"
@@ -96,31 +98,32 @@ export default function HomePage() {
 
             {/* Genre Filters */}
             <AnimatePresence>
-              {(showFilters || window.innerWidth >= 1024) && (
-                <motion.div
-                  initial={{ height: 0, opacity: 0 }}
-                  animate={{ height: 'auto', opacity: 1 }}
-                  exit={{ height: 0, opacity: 0 }}
-                  className="overflow-hidden mb-8"
-                >
-                  <div className="flex flex-wrap gap-2">
-                    {genres.map((genre) => (
-                      <button
-                        key={genre}
-                        onClick={() => setSelectedGenre(genre)}
-                        className={`px-4 py-2 rounded-full transition-all duration-200 ${
-                          selectedGenre === genre
-                            ? 'bg-blue-600 text-white'
-                            : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
-                        }`}
-                      >
-                        {genre}
-                      </button>
-                    ))}
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
+  {(showFilters || window.innerWidth >= 1024) && (
+    <motion.div
+      initial={{ height: 0, opacity: 0 }}
+      animate={{ height: 'auto', opacity: 1 }}
+      exit={{ height: 0, opacity: 0 }}
+      className="overflow-hidden mb-8 flex justify-center"  // Center align the container
+    >
+      <div className="flex flex-wrap gap-2 justify-center">  {/* Center align the buttons */}
+        {genres.map((genre) => (
+          <button
+            key={genre}
+            onClick={() => setSelectedGenre(genre)}
+            className={`px-4 py-2 rounded-full transition-all duration-200 ${
+              selectedGenre === genre
+                ? 'bg-black text-white'  // Selected genre black
+                : 'bg-black-400 text-black hover:bg-gray-200' // Unselected genres in grayscale
+            }`}
+          >
+            {genre}
+          </button>
+        ))}
+      </div>
+    </motion.div>
+  )}
+</AnimatePresence>
+
 
             {/* Articles Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -131,7 +134,7 @@ export default function HomePage() {
           </div>
 
           {/* Sidebar */}
-          <SidebarAds />
+          
         </div>
       </div>
 
