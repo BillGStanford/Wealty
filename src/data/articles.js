@@ -243,7 +243,7 @@ export const articles = [
       genre: 'Culture',
       thumbnail: '/images/movies-shows.jpg',
       description: 'We will be listing the Top 5 Greatest Shows/Movies of 2024',
-      status: 'New',
+      status: 'Old',
       newsWorth: 'Normal',  // <-- New field added here
       content: `
       <h2>The Gentlemen (SERIES)</h2>
@@ -273,7 +273,7 @@ export const articles = [
       thumbnail: '/images/route-fifty-lead-image.jpg',
       description: 'We will be listing the Top 5 Greatest Shows/Movies of 2024',
       status: 'New',
-      newsWorth: 'Urgent-News',  // <-- New field added here
+      newsWorth: 'Normal',  // <-- New field added here
       content: `
       <h2>"THE VIEW" Praises Liz Cheney's "Moral Core"</h2>
 
@@ -310,6 +310,43 @@ export const articles = [
     `,
     },
 
+    {
+      id: '9',
+      title: 'The Axis against Aksum - What this means for the World',
+      slug: 'the-axis-against-aksum',
+      author: 'Kuma',
+      date: '2024-11-18',
+      genre: 'Politics',
+      thumbnail: '/images/the axis.jpg',
+      description: 'A Triple Axis Alliance formed against one country',
+      status: 'New',
+      newsWorth: 'Urgent-News',  // <-- New field added here
+      content: `
+      <h2>R</h2>
+      <p>ecent Events in the Horn of Africa has led many to call it a start of a new War in the Horn of Africa. This conflict may not start now nor does it concern
+      the average Western Man but could lead to a bigger War eventually dragging the World with it, thus causing World War 3.</p>
+     
+      <p><b>Egypt, Eritrea, and Somalia</b> have formed a alliance to combat the growth of Ethiopia in the Horn and in the rest of Africa. As the Government of Abiy Ahmed Ali continues to push for 
+      Ethiopia to enter the global stage as a dominant figure, the triple alliance has other plans for this.</p>
+      <img src="/images/aviy.jpg" alt="Abiy Ahmed Ali" />
+      <i>*Abiy Ahmed Ali - Prime Minister of Ethiopia Pictured</i>
+
+      <p>This alliance comes as <b>Ethiopian Prime Minister Ali</b> calls for Ethiopia to have the right of access to sea. Ethiopia is a landlocked nation after the region of "Eritrea" recently seperated from her.
+      Ethiopia is one of the largest landlocked nations in the World and largest populated landlocked nation. As one of the fastest growing economies in Africa, many say its only right that Ethiopians have
+      right of access to the sea and operate there own trade. This has caused tension with Eritrea, as Abiy said Eritrea must give back to Ethiopia. But this is just the small portion of the problem.</p> 
+
+      <p>You see, while the Ethiopian Government and the Eritrea regime tensions decline, Abiy Ahmed, has looked for other ways to achieve this. <b>Somalialand</b>. The Republic of Somaliland is a soverign country neighboring Ethiopia and has access to the Red Sea.
+      On January 1st, 2024, Ethiopian Government and the Somaliland Government signed the "memorandum of understanding" granding Ethiopia access to the Red Sea via Somalialand in exchange Ethiopia recognizes Somaliland as a country. This is where it gets tricky. 
+      Somalialand isn't internationally recognized as a country but apart of another country, SOMALIA!</p>
+
+      <p>So this angered many in Somalia, calling it "illegal", "invasion," and so on. The Somali government responded with kicking out Ethiopians from there country and recalling there Ambassador to Ethiopia.
+      Somalia says Ethiopia is being aggressive and is not willing to talk to the Somali government although, Somalia, was the one who took out diplomatic solutions off the table. So that lands us here: the Triple Alliance.</p>
+
+      <p>But so far I've only listed 2 of the 3 members of the Axis. What about Egypt?</p>
+
+      <p>Egypt is playing this smart. This situation doesn't affect Egypt directly, but it is aimed at destabilizing Ethiopia. Egypt has long opposed Ethiopia due to the construction of the Grand Ethiopian Renaissance Dam (GERD), Africa's largest hydroelectric project, which is now in operation. The dam will provide power to all Ethiopians and significantly enhance Ethiopia's diplomatic influence. By creating military and diplomatic pressure on Ethiopia, Egypt seeks to undermine the project and weaken Ethiopia's position.</p>
+    `,
+    },
 
     
     // Add more articles as needed
