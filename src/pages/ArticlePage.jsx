@@ -5,7 +5,6 @@ import { format } from 'date-fns';
 import { Clock, User, Tag, Share2, Check } from 'lucide-react';
 import { Alert } from "../components/ui/Alert"; // Adjust this relative path based on your directory structure
 
-
 export default function ArticlePage() {
   const { slug } = useParams();
   const article = articles.find(a => a.slug === slug);
@@ -34,7 +33,7 @@ export default function ArticlePage() {
   }
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white font-serif"> {/* Use the serif font for entire page */}
       {/* Alert for copied link */}
       {showCopied && (
         <div className="fixed top-4 right-4 z-50">
@@ -54,7 +53,7 @@ export default function ArticlePage() {
         </div>
 
         {/* Title */}
-        <h1 className="font-serif text-5xl leading-tight mb-8 text-gray-900">
+        <h1 className="font-serif text-5xl leading-tight mb-8 text-gray-900 font-bold">
           {article.title}
         </h1>
 
@@ -78,7 +77,7 @@ export default function ArticlePage() {
         </div>
 
         {/* Article Content */}
-        <div className="prose prose-lg max-w-none">
+        <div className="prose prose-lg max-w-none text-justify">
           <div 
             className="first-letter:text-7xl first-letter:font-serif first-letter:mr-3 first-letter:float-left first-letter:font-bold"
             dangerouslySetInnerHTML={{ __html: article.content }}
