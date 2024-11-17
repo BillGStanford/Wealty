@@ -49,15 +49,18 @@ export default function Header() {
           </div>
         </div>
 
-        {/* Logo Section */}
-        <div className="py-8 text-center">
-          <Link to="/" className="inline-block">
-            <h1 className="text-4xl md:text-5xl font-serif tracking-tight">
-              Our Days Media
-            </h1>
-            <p className="text-sm mt-2 text-gray-600">Ideas. Influence. Impact.</p>
-          </Link>
-        </div>
+{/* Logo Section */}
+<div className="py-8 text-center">
+  <Link to="/" className="inline-block">
+    <img 
+      src="/images/ODM-official-logo.png" 
+      alt="Our Days Media Logo" 
+      className="w-auto h-16 md:h-20"  // Adjust size as needed
+    />
+    <p className="text-sm mt-2 text-gray-600">WHERE FACTS HURT FEELINGS</p>
+  </Link>
+</div>
+
 
         {/* Mobile Menu */}
         <div
