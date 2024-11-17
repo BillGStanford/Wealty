@@ -6,17 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
 
-    <!-- Standard meta description -->
-    <meta name="description" content="You're trustable news website. Discover the Value of True News" />
+    <!-- Standard meta description (Keep this under 160 characters) -->
+    <meta name="description" content="Your trustable news website. Stay updated with the latest news and stories from around the world." />
+
+    <!-- Keywords Meta Tag (Add relevant keywords related to your niche) -->
+    <meta name="keywords" content="latest news, breaking news, trustworthy news, news website, world news, trending stories" />
 
     <!-- Open Graph Tags -->
     <meta property="og:title" content="Our Days - Latest News and Stories" />
-    <meta property="og:description" content="You're trustable news website. Discover the Value of True News" />
+    <meta property="og:description" content="Your trustable news website. Stay updated with the latest news and stories from around the world." />
     
-    <!-- Image for Open Graph (ensure this image is at least 1200x630px) -->
+    <!-- Image for Open Graph (Ensure this image is at least 1200x630px) -->
     <meta property="og:image" content="/favicon.jpg" />  <!-- Updated to PNG -->
     
-    <!-- Optional: Adding additional image dimensions to make sure it displays properly -->
+    <!-- Optional: Adding additional image dimensions for optimal display -->
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     
@@ -27,15 +30,15 @@
     <!-- Site Name -->
     <meta property="og:site_name" content="Our Days" />
 
-    <!-- Locale of the website (can be adjusted if your site is for a specific language or region) -->
+    <!-- Locale of the website (adjust if your site is for a specific language or region) -->
     <meta property="og:locale" content="en_US" />
     
     <!-- Twitter Card Tags -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Our Days - Latest News and Stories" />
-    <meta name="twitter:description" content="You're trustable news website. Discover the Value of True News" />
+    <meta name="twitter:description" content="Your trustable news website. Stay updated with the latest news and stories from around the world." />
     
-    <!-- Image for Twitter Card (same as Open Graph, it will be used for larger previews) -->
+    <!-- Image for Twitter Card (same as Open Graph, for larger previews) -->
     <meta name="twitter:image" content="/favicon.jpg" />  <!-- Updated to PNG -->
     
     <!-- Optional: Adding Twitter's image size recommendation for optimal display -->
@@ -47,6 +50,31 @@
     
     <!-- Web App Manifest (for progressive web app behavior) -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+    <!-- Schema.org Markup for Search Engines (Structured Data) -->
+    <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "NewsArticle",
+      "headline": "Our Days - Latest News and Stories",
+      "description": "Your trustable news website. Stay updated with the latest news and stories from around the world.",
+      "image": "/favicon.jpg",
+      "author": {
+        "@type": "Organization",
+        "name": "Our Days"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Our Days",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "/favicon.jpg"
+        }
+      },
+      "datePublished": "2024-11-16T00:00:00Z",
+      "dateModified": "2024-11-16T00:00:00Z"
+    }
+    </script>
 
     <title>Our Days - Latest News and Stories</title>
   </head>
