@@ -243,7 +243,7 @@ export const articles = [
       genre: 'Culture',
       thumbnail: '/images/movies-shows.jpg',
       description: 'We will be listing the Top 5 Greatest Shows/Movies of 2024',
-      status: 'Old',
+      status: 'New',
       newsWorth: 'Normal',  // <-- New field added here
       content: `
       <h2>The Gentlemen (SERIES)</h2>
