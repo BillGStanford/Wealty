@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
 import ArticlePage from './pages/ArticlePage';
 import { QuizzesPage, QuizPage } from './pages/QuizPage';
+import LifestylePage from './pages/LifestylePage';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
               <Route path="/article/:slug" element={<ArticlePage />} />
               <Route path="/quizzes" element={<QuizzesPage />} />
               <Route path="/quiz/:quizId" element={<QuizPage />} />
+              <Route path="/lifestyle" element={<LifestylePage />} />
             </Routes>
           </main>
           <Footer />
