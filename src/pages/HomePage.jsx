@@ -1,149 +1,158 @@
-import React, { useState, useEffect } from 'react';
-import { articles, genres } from '../data/articles';
-import { breakingNewsData } from '../data/breakingnews'; // Import breaking news data
-import ArticleCard from '../components/ArticleCard';
-
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { Filter } from 'lucide-react';
+import { Filter, ArrowRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import RandomQuestionModal from '../components/RandomQuestionModal';
+import { format } from 'date-fns';
+import { articles, genres } from '../data/articles';
 
 export default function HomePage() {
   const [selectedGenre, setSelectedGenre] = useState('All');
   const [showFilters, setShowFilters] = useState(false);
-  const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // Filter articles based on genre and sort them by 'status'
   const filteredArticles = selectedGenre === 'All'
     ? articles
     : articles.filter(article => article.genre === selectedGenre);
 
-  // Sort articles: 'New' articles first, followed by 'Old'
-  const sortedArticles = filteredArticles.sort((a, b) => {
-    if (a.status === 'New' && b.status !== 'New') return -1;
-    if (a.status !== 'New' && b.status === 'New') return 1;
-    return 0;
-  });
+  const featuredArticles = filteredArticles.filter(article => article.featured);
+  const regularArticles = filteredArticles.filter(article => !article.featured);
 
-  // Find the urgent news article (if any)
-  const urgentNews = articles.find(article => article.newsWorth === 'Urgent-News');
-
-  // Filter the breaking news headlines where breakingnewsinfo is true
-  const breakingNewsHeadlines = breakingNewsData.filter(news => news.breakingnewsinfo);
-
-  // Trigger the modal after a delay (simulate NYT-style pop-up)
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsModalOpen(true);
-    }, 2000); // 2 seconds delay before the modal shows
-
-    return () => clearTimeout(timer); // Clear the timer if component unmounts
-  }, []);
-
-  const handleModalClose = () => {
-    setIsModalOpen(false);
-  };
-
-  const handleModalAccept = () => {
-    setIsModalOpen(false);
-    // Handle the action when the user accepts (e.g., redirect to Terms page)
-    // For now, we just log it
-    console.log("User accepted to read Terms & Services");
-  };
 
   return (
     <>
       <Helmet>
-        <title>Our Days - Latest News and Stories</title>
-        <meta name="description" content="Stay informed with the latest news from Our Days." />
+        <title>Wealth Essence - Legacy & Prosperity</title>
+        <meta name="description" content="Discover the essence of wealth and legacy." />
       </Helmet>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {/* Breaking News Ticker */}
-        <div className="bg-black text-white p-2 rounded-md mb-4">
-          <div className="flex items-center space-x-4">
-            <span className="font-semibold">Breaking News: </span>
-            <div className="flex-1 overflow-hidden whitespace-nowrap">
-              <div className="animate-marquee">
-                {breakingNewsHeadlines.length > 0
-                  ? breakingNewsHeadlines.map((news, index) => (
-                      <span key={index} className="mr-8">
-                        {news.title}
-                      </span>
-                    ))
-                  : 'No breaking news at the moment.'}
+      <main className="bg-[#ede7c7]">
+        {/* Left Sidebar Navigation */}
+        <div className="fixed left-0 top-0 h-screen w-24 border-r border-[#5b0302]/20 hidden lg:flex flex-col items-center justify-between py-8">
+          <div className="writing-vertical-lr transform rotate-180 text-[#5b0302]/60 text-sm">
+            {format(new Date(), 'MMMM d, yyyy')}
+          </div>
+        </div>
+
+        {/* Main Content */}
+        <div className="lg:ml-24">
+
+          {/* Genre Navigation */}
+          <div className="sticky top-0 bg-[#ede7c7] border-b border-[#5b0302]/20 z-10">
+            <div className="max-w-7xl mx-auto px-8 py-6">
+              <div className="flex justify-between items-center">
+                <button
+                  className="lg:hidden flex items-center gap-2 text-[#5b0302]"
+                  onClick={() => setShowFilters(!showFilters)}
+                >
+                  <Filter className="w-5 h-5" />
+                  <span className="font-serif tracking-wider">FILTER</span>
+                </button>
+
+                <AnimatePresence>
+                  {(showFilters || window.innerWidth >= 1024) && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      className="absolute top-full left-0 right-0 bg-[#ede7c7] lg:relative lg:top-0 lg:bg-transparent"
+                    >
+                      <div className="flex flex-wrap justify-center gap-8 p-4 lg:p-0">
+                        {genres.map((genre) => (
+                          <button
+                            key={genre}
+                            onClick={() => setSelectedGenre(genre)}
+                            className={`font-serif tracking-wider transition-all ${
+                              selectedGenre === genre
+                                ? 'text-[#5b0302]'
+                                : 'text-[#5b0302]/60 hover:text-[#5b0302]'
+                            }`}
+                          >
+                            {genre.toUpperCase()}
+                          </button>
+                        ))}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
             </div>
           </div>
-        </div>
 
-        <div className="flex flex-col lg:flex-row gap-8">
-          {/* Main Content */}
-          <div className="flex-1">
-            {/* Hero Section for Urgent News */}
-            {urgentNews && (
-              <ArticleCard article={urgentNews} isHero={true} index={0} />
-            )}
+          {/* Featured Articles Section */}
+          {featuredArticles.length > 0 && (
+            <section className="border-b border-[#5b0302]/20">
+              <div className="max-w-7xl mx-auto px-8 py-16">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                  {featuredArticles.slice(0, 2).map((article) => (
+                    <Link
+                      key={article.slug}
+                      to={`/article/${article.slug}`}
+                      className="group"
+                    >
+                      <div className="aspect-w-16 aspect-h-9 mb-8 overflow-hidden">
+                        <img
+                          src={article.thumbnail}
+                          alt={article.title}
+                          className="object-cover w-full h-full transform transition-transform duration-700 group-hover:scale-105"
+                        />
+                      </div>
+                      <div className="space-y-4">
+                        <div className="font-serif tracking-widest text-sm text-[#5b0302]/80">
+                          {article.genre.toUpperCase()}
+                        </div>
+                        <h2 className="font-serif text-4xl text-[#5b0302] group-hover:text-[#5b0302]/80 transition-colors">
+                          {article.title}
+                        </h2>
+                        <p className="text-[#5b0302]/70 line-clamp-3">
+                          {article.excerpt}
+                        </p>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </section>
+          )}
 
-            
-
-            {/* Mobile Filter Toggle */}
-            <button
-              className="lg:hidden flex items-center space-x-2 mb-4 text-gray-600"
-              onClick={() => setShowFilters(!showFilters)}
-            >
-              <Filter className="w-5 h-5" />
-              <span>Filter by Genre</span>
-            </button>
-
-            {/* Genre Filters */}
-            <AnimatePresence>
-  {(showFilters || window.innerWidth >= 1024) && (
-    <motion.div
-      initial={{ height: 0, opacity: 0 }}
-      animate={{ height: 'auto', opacity: 1 }}
-      exit={{ height: 0, opacity: 0 }}
-      className="overflow-hidden mb-8 flex justify-center"  // Center align the container
-    >
-      <div className="flex flex-wrap gap-2 justify-center">  {/* Center align the buttons */}
-        {genres.map((genre) => (
-          <button
-            key={genre}
-            onClick={() => setSelectedGenre(genre)}
-            className={`px-4 py-2 rounded-full transition-all duration-200 ${
-              selectedGenre === genre
-                ? 'bg-black text-white'  // Selected genre black
-                : 'bg-black-400 text-black hover:bg-gray-200' // Unselected genres in grayscale
-            }`}
-          >
-            {genre}
-          </button>
-        ))}
-      </div>
-    </motion.div>
-  )}
-</AnimatePresence>
-
-
-            {/* Articles Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {sortedArticles.map((article, index) => (
-                <ArticleCard key={article.id} article={article} index={index} />
+          {/* Regular Articles Grid */}
+          <section className="max-w-7xl mx-auto px-8 py-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-16">
+              {regularArticles.map((article) => (
+                <Link
+                  key={article.slug}
+                  to={`/article/${article.slug}`}
+                  className="group flex flex-col"
+                >
+                  <div className="aspect-w-16 aspect-h-9 mb-6 overflow-hidden">
+                    <img
+                      src={article.thumbnail}
+                      alt={article.title}
+                      className="object-cover w-full h-full transform transition-transform duration-700 group-hover:scale-105"
+                    />
+                  </div>
+                  <div className="flex-1 flex flex-col">
+                    <div className="font-serif tracking-widest text-xs text-[#5b0302]/80 mb-3">
+                      {article.genre.toUpperCase()}
+                    </div>
+                    <h3 className="font-serif text-xl text-[#5b0302] mb-3 group-hover:text-[#5b0302]/80 transition-colors">
+                      {article.title}
+                    </h3>
+                    <p className="text-[#5b0302]/70 text-sm mb-4 line-clamp-2 flex-1">
+                      {article.excerpt}
+                    </p>
+                    <div className="flex items-center justify-between text-xs text-[#5b0302]/60 mt-auto">
+                      <span>{format(new Date(article.date), 'MMMM d, yyyy')}</span>
+                      <span className="font-serif tracking-wider flex items-center gap-2">
+                        READ MORE <ArrowRight className="w-4 h-4" />
+                      </span>
+                    </div>
+                  </div>
+                </Link>
               ))}
             </div>
-          </div>
-
-          {/* Sidebar */}
-          
+          </section>
         </div>
-      </div>
-
-      {/* Random Question Modal */}
-      <RandomQuestionModal 
-        isOpen={isModalOpen}
-        onClose={handleModalClose}
-        onAccept={handleModalAccept}
-      />
+      </main>
     </>
   );
 }
