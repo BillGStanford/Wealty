@@ -16,15 +16,15 @@ const LifestylePage = () => {
       category: 'Estates',
       title: 'Mediterranean Villa Collection',
       description: 'Exclusive properties nestled in the heart of coastal paradise',
-      image: '/images/babysitting.jpg',
+      image: '/images/Mediterranean-Villa-1.jpg',
       date: 'Summer 2024'
     },
     {
       id: 2,
       category: 'Timepieces',
-      title: 'Vintage Chronograph Series',
+      title: 'Pix Watch',
       description: 'Masterpieces of horological excellence',
-      image: '/images/babysitting.jpg',
+      image: '/images/pexels-pixabay-277319.jpg',
       date: 'Spring 2024'
     },
     // Add more gallery items as needed
