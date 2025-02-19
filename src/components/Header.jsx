@@ -24,8 +24,8 @@ export default function Header() {
           </button>
           
           <div className="hidden lg:flex items-center space-x-6 text-sm text-[#5b0302]">
+          <Link to="/" className="hover:text-[#5b0302]/70 font-serif tracking-wide">HOME</Link>
             <Link to="/quizzes" className="hover:text-[#5b0302]/70 font-serif tracking-wide">QUIZZES</Link>
-            <Link to="/" className="hover:text-[#5b0302]/70 font-serif tracking-wide">HOME</Link>
             <Link to="/lifestyle" className="hover:text-[#5b0302]/70 font-serif tracking-wide">LIFESTYLE</Link>
           </div>
 
@@ -54,8 +54,8 @@ export default function Header() {
           isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
         } overflow-hidden`}>
           <nav className="flex flex-col space-y-4 py-4">
+          <Link to="/" className="text-[#5b0302] hover:text-[#5b0302]/70 font-serif">Home</Link>
             <Link to="/quizzes" className="text-[#5b0302] hover:text-[#5b0302]/70 font-serif">Quizzes</Link>
-            <Link to="/" className="text-[#5b0302] hover:text-[#5b0302]/70 font-serif">Home</Link>
             <Link to="/lifestyle" className="text-[#5b0302] hover:text-[#5b0302]/70 font-serif">Lifestyle</Link>
           </nav>
         </div>
