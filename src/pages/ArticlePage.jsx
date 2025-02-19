@@ -4,7 +4,8 @@ import { Helmet } from 'react-helmet-async';
 import { format } from 'date-fns';
 import { Clock, User, Tag, Share2, ArrowLeft, Check } from 'lucide-react';
 import { articles } from '../data/articles';
-import { Alert } from "../components/ui/Alert"; // Adjust this relative path based on your directory structure
+import { Alert } from "../components/ui/Alert";
+import { EmbedSection } from '../components/EmbedSection';
 
 export default function ArticlePage() {
   const { slug } = useParams();
@@ -46,7 +47,7 @@ export default function ArticlePage() {
     <>
       <Helmet>
         <title>{`${article.title} - Wealth Essence`}</title>
-        <meta name="description" content={article.excerpt} />
+        <meta name="description" content={article.description} />
       </Helmet>
 
       <main className="min-h-screen bg-[#ede7c7]">
@@ -103,17 +104,6 @@ export default function ArticlePage() {
             </div>
           </header>
 
-          {/* Article Image */}
-          {article.image && (
-            <div className="mb-12">
-              <img
-                src={article.image}
-                alt={article.title}
-                className="w-full h-auto"
-              />
-            </div>
-          )}
-
           {/* Article Content */}
           <div className="prose prose-lg max-w-none text-[#5b0302]">
             <div 
@@ -121,6 +111,12 @@ export default function ArticlePage() {
               dangerouslySetInnerHTML={{ __html: article.content }}
             />
           </div>
+
+          {/* Embed Section */}
+          <EmbedSection 
+            videoEmbeds={article.videoEmbeds} 
+            otherEmbeds={article.otherEmbeds} 
+          />
 
           {/* Article Footer */}
           <footer className="mt-16 pt-8 border-t border-[#5b0302]/20">
