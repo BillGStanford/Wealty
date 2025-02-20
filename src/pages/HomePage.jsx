@@ -5,6 +5,7 @@ import { Filter, ArrowRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { format } from 'date-fns';
 import { articles, genres } from '../data/articles';
+import AdvertisementSection from '../components/AdvertisementSection';
 
 export default function HomePage() {
   const [selectedGenre, setSelectedGenre] = useState('All');
@@ -18,7 +19,9 @@ export default function HomePage() {
   const regularArticles = filteredArticles.filter(article => !article.featured);
 
 
+  
   return (
+    
     <>
       <Helmet>
         <title>Wealth Essence - Legacy & Prosperity</title>
@@ -26,6 +29,22 @@ export default function HomePage() {
       </Helmet>
 
       <main className="bg-[#ede7c7]">
+      <AdvertisementSection 
+  imageAds={[
+    {
+      imageUrl: "/images/WealthEssence.jpg",
+      alt: "Premium Investment Options",
+      link: "https://discord.gg/C77RvYYF"
+    },
+  ]}
+  videoAds={[
+    {
+      videoUrl: "/path/to/video1.mp4",
+      thumbnail: "/path/to/video1-thumbnail.jpg",
+      link: "https://example.com/video-promotion"
+    }
+  ]}
+/>
         {/* Left Sidebar Navigation */}
         <div className="fixed left-0 top-0 h-screen w-24 border-r border-[#5b0302]/20 hidden lg:flex flex-col items-center justify-between py-8">
           <div className="writing-vertical-lr transform rotate-180 text-[#5b0302]/60 text-sm">
